@@ -22,12 +22,40 @@ let form = document.querySelector(".addTask form")
 let taskInput = document.querySelector(".addTask form #task-input") 
 let taskDetailsInput = document.querySelector(".addTask form textarea ")
 let taskCheckBox = document.querySelector(".addTask form #check")
-let allTask = document.querySelector(".allTask")
+let currentTask = [
+       {
+        task:"Eat",
+        details:"khana khana",
+        imp:true
+       },
+       {
+        task:"Sleep",
+        details:"time pr sona",
+        imp:false
+       },
+       {
+        task:"Code",
+        details:"Code Likhna",
+        imp:true
+       }, 
+]
 
-console.log(allTask)
 form.addEventListener("submit",function(e){
     e.preventDefault()
     console.log(taskInput.value)
     console.log(taskDetailsInput.value)
     console.log(taskCheckBox.checked)
 })
+
+var sum = ''
+// var allTask = document.querySelector(".allTask")
+// var sum = ''
+// allTask.addEventListener("")
+
+currentTask.forEach(function(elem){
+  sum = sum + `<div class="task">
+                <h5>Go Gym</h5>
+                <button>Mark as Completed</button>
+            </div>`
+})
+allTask.innerHTML = sum
