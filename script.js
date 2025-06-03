@@ -17,45 +17,71 @@ function openFeatures() {
 
 // openFeatures();
 
+function todoList(){
+ 
+var currentTask = []
+ 
+if(localStorage.getItem("currentTask")){
+  currentTask = JSON.parse(localStorage.getItem("currentTask"))
+}else{
+  console.log("Task is not empty")
+} 
 
-let form = document.querySelector(".addTask form")
-let taskInput = document.querySelector(".addTask form #task-input") 
-let taskDetailsInput = document.querySelector(".addTask form textarea ")
-let taskCheckBox = document.querySelector(".addTask form #check")
-let currentTask = [
-       {
-        task:"Eat",
-        details:"khana khana",
-        imp:true
-       },
-       {
-        task:"Sleep",
-        details:"time pr sona",
-        imp:false
-       },
-       {
-        task:"Code",
-        details:"Code Likhna",
-        imp:true
-       }, 
-]
 
-form.addEventListener("submit",function(e){
-    e.preventDefault()
-    console.log(taskInput.value)
-    console.log(taskDetailsInput.value)
-    console.log(taskCheckBox.checked)
+function renderTask() {
+    localStorage.setItem("currentTask",JSON.stringify (currentTask))
+  var allTask = document.querySelector(".allTask");
+  var sum = "";
+  currentTask.forEach(function (elem,index) {
+    sum =
+      sum +
+      `<div class="task"> 
+                <h5>${elem.task} <span class=${elem.imp}>imp</span></h5>
+                <button id=${index}>Mark as Completed</button>
+            </div>`;
+  });
+  allTask.innerHTML = sum;
+  
+} 
+
+renderTask()
+
+let form = document.querySelector(".addTask form");
+let taskInput = document.querySelector(".addTask form #task-input");
+let taskDetailsInput = document.querySelector(".addTask form textarea ");
+let taskCheckBox = document.querySelector(".addTask form #check");
+
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  currentTask.push({
+    task: taskInput.value,
+    details: taskDetailsInput.value,
+    imp: taskCheckBox.checked,
+  });
+  
+  renderTask();
+  
+
+  taskInput.value = ''
+  taskDetailsInput.value = ''
+  taskCheckBox.value = false
+  renderTask()
+  location.reload()
+}); 
+
+
+
+var markCompletedBtn = document.querySelectorAll(".task button")     
+markCompletedBtn.forEach(function(button){
+  button.addEventListener("click",function(){
+     currentTask.splice(button.id,1) 
+     console.log("data")
+     renderTask()
+     location.reload()
+  })
 })
+}
 
-var sum = ''
-// var allTask = document.querySelector(".allTask")
-// var sum = ''
-// allTask.addEventListener("")
 
-currentTask.forEach(function(elem){
-  sum = sum + `<div class="task">
-                <h5>Go Gym</h5>
-                <button>Mark as Completed</button>
-            </div>`
-})
-allTask.innerHTML = sum
+todoList()

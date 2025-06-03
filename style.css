@@ -97,9 +97,7 @@ section.allElems{
 .backbtn:active{
      scale: 0.9;
 }
-.todo-list-fullpage{
-    display: block;
-}
+ 
 .todo-list-fullpage h2{
     font-size: 40px;
 }
@@ -195,7 +193,25 @@ section.allElems{
 }
 .todo-list-fullpage .todo-container .allTask .task h5{
     font-size: 40px;
-    color: var(--tri2);
+        display: flex;
+        align-items: flex-start;
+        color: var(--tri2); 
+        gap: 10px;
+}
+.task h5 span{
+    background-color: red; 
+    border-radius: 50px;
+    color: var(--pri);
+    font-size: 12px;
+    padding: 3px 6px;
+}
+
+.task h5 span.true{
+    opacity: 1;
+}
+
+.task h5 span.false{
+    opacity: 0;
 }
 .todo-list-fullpage .todo-container .allTask .task button{
     padding: 10px 15px;
