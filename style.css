@@ -227,9 +227,7 @@ section.allElems{
 
 
 /* ++++++++Daily Planner+++++++++++++++ */
-.daily-planner-fullpage{
-    display: block;
-}
+ 
 .daily-planner-fullpage h2{
     font-size: 65px;  
 }
@@ -252,17 +250,26 @@ section.allElems{
     display: flex;
     align-items: center;
     position: relative;
-    width: 50%;
+    width: 49%;
+    margin-bottom: 15px;
 }
-.day-planner .day-planner-time input p{
+.day-planner .day-planner-time  p{
     position: absolute;
+    top: 10%;
+    left: 2%;
+    font-size: 20px; 
+    color: #333446;
 }
 
 .day-planner .day-planner-time input{
     padding: 20px 40px;
     width: 100%;
-    background-color: var(--sec);
+    background-color: var(--tri1);
     border-radius: 5px;
-    font-size: 30px;
+    font-size: 30px; 
+    padding-top: 30px;
+    outline: none;
+    border: none ;
+    color:#333446;
 
 }

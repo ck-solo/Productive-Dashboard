@@ -5,7 +5,7 @@ function openFeatures() {
 
   allElems.forEach(function (elem) {
     elem.addEventListener("click", function () {
-      fullElemPage[elem.id].style.display = "block"; 
+      fullElemPage[elem.id].style.display = "block";
     });
   });
 
@@ -15,10 +15,10 @@ function openFeatures() {
     });
   });
 }
-// openFeatures();
+openFeatures();
 
 function todoList() {
-  var currentTask = [];
+  let currentTask = [];
 
   if (localStorage.getItem("currentTask")) {
     currentTask = JSON.parse(localStorage.getItem("currentTask"));
@@ -27,9 +27,9 @@ function todoList() {
   }
 
   function renderTask() {
-    var allTask = document.querySelector(".allTask");
+    let allTask = document.querySelector(".allTask");
 
-    var sum = "";
+    let sum = "";
 
     currentTask.forEach(function (elem, idx) {
       sum =
@@ -73,4 +73,44 @@ function todoList() {
   });
 }
 
-// todoList();
+todoList();
+
+// +++++++++++++++++++++DailyPlanner++++++++++++++++++++++++++
+
+function DailyData(){
+    var DayPlanner = document.querySelector(".day-planner")
+
+var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {}
+
+
+let time = Array.from({ length: 18 },(elem, idx) => `${6 + idx}:00 - ${7 + idx}:00`
+);
+
+
+
+
+let Wholesum = "";
+time.forEach(function (elem,idx) {
+
+    let saveData = dayPlanData[idx] || ''
+    
+    Wholesum = Wholesum +`<div class="day-planner-time">
+            <p>${elem}</p>
+            <input id=${idx} type="text" placeholder="..." value=${saveData}>
+     </div>`;
+});
+
+DayPlanner.innerHTML = Wholesum
+
+
+var dayPlannerInput = document.querySelectorAll('.day-planner input')
+
+dayPlannerInput.forEach(function(elem){
+    elem.addEventListener('input',function(){
+         dayPlanData[elem.id] = elem.value
+         localStorage.setItem('dayPlanData',JSON.stringify(dayPlanData))
+    })
+})
+}
+
+DailyData()
