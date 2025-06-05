@@ -1,8 +1,9 @@
 :root{
-    --pri: #333446;
-    --sec:#7F8CAA;
-    --tri1:#B8CFCE;
-    --tri2:#EAEFEF;
+    --pri: #e61c1c;
+    --sec:#2A4759;
+    --tri1:#90D1CA;
+    --tri2:#D2D0A0;
+    --tri3:#7F8CAA;
 }
 
 *{
@@ -74,7 +75,7 @@ section.allElems{
 .fullElem{
     height: 100%;
     width: 100%;
-    background-color: #B8CFCE;
+    background-color: var(--sec);
     padding: 20px;
     display: none;
     position: absolute;
@@ -128,17 +129,15 @@ section.allElems{
     
     padding: 15px;
     font-size: 18px;
-    background-color: var(--tri1); 
-    border: none;
+    background-color: var(--tri2); 
     border-radius: 10px;
 
 }
 .todo-container .addTask form textarea{
     width: 100%;  
     padding: 10px;
-    font-size: 18px; 
-    border: none;
-    background-color: var(--tri1); 
+    font-size: 18px;  
+    background-color: var(--tri2); 
     border-radius: 10px; 
     
 }
@@ -147,7 +146,7 @@ section.allElems{
     display: flex;
     align-items: center;
     justify-content: flex-start;  
-    color: #333446;
+    color: #ff0909;
     width: 100%; 
 }
 .mark-imp input{ 
@@ -162,6 +161,7 @@ section.allElems{
     width: 100%;  
     padding: 10px; 
     font-size: 18px;
+    text-align: center;
     border-radius: 10px;
     color: var(--pri);
     background-color: var(--tri1);
@@ -202,7 +202,7 @@ section.allElems{
 .task h5 span{
     background-color: red; 
     border-radius: 50px;
-    color: var(--pri);
+    color: var(--sec);
     font-size: 12px;
     padding: 3px 6px;
 }
@@ -269,8 +269,7 @@ section.allElems{
     font-size: 30px; 
     padding-top: 30px;
     outline: none;
-    border: none ;
-    color:var(--pri);
+    border: none ; 
 
 }
 
@@ -282,11 +281,10 @@ section.allElems{
 
 }
 .motivational-fullpage .motivation-container{
-    position: absolute;
+    position: absolute; 
     height: 300px;
-    width: 300px;
-    border-radius: 20px;
-    background-color: var(--tri2);
+    width: 80%;
+    border-radius: 20px; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -301,16 +299,48 @@ section.allElems{
     position: absolute;
     border-radius: 20px;
     scale: 1.15;
+    filter: blur(60px); 
     z-index: 8;
 }
 
 .motivational-fullpage .motivation-container .motivation-wrapper{
-    z-index: 10;
-    position: absolute;
-    height: 100%;
+    z-index: 10; 
+    position: absolute;   
     width: 100%;
     border-radius: 20px;
+    background-color: var(--tri3);
+    padding: 10px;
+}
 
+
+.motivation-1{
+    padding: 15px;
     background-color: var(--sec);
+    border-radius: 10px;
+    
+}
 
+.motivation-1 h2{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.motivation-2{ 
+    margin-top: 5px;
+    padding: 20px;
+}
+
+.motivation-2 h1{
+    font-size: 20px;
+    font-weight: 200;
+}
+.motivation-3{
+    padding: 15px; 
+    border-radius: 10px;
+}
+
+.motivation-3 h2{
+    text-align: right;
+    font-size: 20px;
+    font-weight: 600;  
 }
