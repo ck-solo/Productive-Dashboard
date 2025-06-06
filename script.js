@@ -114,3 +114,22 @@ dayPlannerInput.forEach(function(elem){
 }
 
 DailyData()
+
+
+// ++++++++++++++++++MotivationPage++++++++++++++++++++++++++++++++
+
+function motivationQuote(){
+  let quote = document.querySelector('.motivation-2 h1')
+let author = document.querySelector('.motivation-3 h2')
+
+ async function fetchQuote(){
+  let response = await fetch('https://random-quotes-freeapi.vercel.app/api/random')
+  let data = await response.json() 
+ quote.innerHTML = data.quote
+ author.innerHTML = data.author
+}
+
+fetchQuote()
+}
+
+motivationQuote()

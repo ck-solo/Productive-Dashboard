@@ -275,21 +275,27 @@ section.allElems{
 
 /* ++++++++++++MotivationPage++++++++++++++ */
 
-.motivational-fullpage {
-    display: block;
+.motivational-fullpage { 
     position: relative; 
 
 }
+.motivation-fullPage-container{
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .motivational-fullpage .motivation-container{
-    position: absolute; 
-    height: 300px;
+    position: relative; 
+    height: 400px;
     width: 80%;
-    border-radius: 20px; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: 20px;  
 }
  
+
 
 .motivational-fullpage .motivation-container::after{
     content: '';
@@ -309,38 +315,60 @@ section.allElems{
     width: 100%;
     border-radius: 20px;
     background-color: var(--tri3);
-    padding: 10px;
+    padding: 12px;
+    border: 3px solid var(--sec);
 }
 
+.motivational-fullpage .motivation-container .motivation-wrapper img{
+    position: absolute;
+    right: 7%;
+    top: 10%;
+    opacity: 0.5;
+    height: 60px;
+}
 
 .motivation-1{
-    padding: 15px;
+    padding: 20px;
     background-color: var(--sec);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
     
 }
 
 .motivation-1 h2{
-    font-size: 20px;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+
 }
 
-.motivation-2{ 
-    margin-top: 5px;
+.motivation-2{  
     padding: 20px;
 }
 
 .motivation-2 h1{
-    font-size: 20px;
-    font-weight: 200;
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
-.motivation-3{
-    padding: 15px; 
+.motivation-3{ 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     border-radius: 10px;
 }
 
 .motivation-3 h2{
     text-align: right;
     font-size: 20px;
+    padding: 15px;
+    border-radius: 20px;
     font-weight: 600;  
+    background-color: var(--sec);
+    width: fit-content;
 }
