@@ -4,6 +4,8 @@
     --tri1:#90D1CA;
     --tri2:#D2D0A0;
     --tri3:#7F8CAA;
+    --green:rgb(0, 128, 85);
+    --blue: rgb(11, 134, 175);
 }
 
 *{
@@ -371,4 +373,47 @@ section.allElems{
     font-weight: 600;  
     background-color: var(--sec);
     width: fit-content;
+}
+
+/* +++++++++++++Pomodoro Timer++++++++++++ */
+
+.session{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50% ,0);
+    background-color:rgb(0, 128, 85);
+    padding: 10px 30px; 
+    font-size: 25px;
+    border-radius: 5px;
+}
+.pomodoro-fullpage h1{
+    font-size: 60px;
+}
+
+.pomo-timer{ 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+}
+
+.pomo-timer h1{
+    font-size: 120px;
+}
+
+.pomo-timer button{
+    background-color: #43728f;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    color: aliceblue;
+    margin: 10px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 5px 5px 0px rgb(44, 43, 43);
+}
+
+.pomo-timer button:active{
+    box-shadow: 0 0 0 black;
 }
