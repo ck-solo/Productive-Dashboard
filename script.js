@@ -222,27 +222,53 @@ pomodoro()
 var city = "Delhi"
 let data = null
 let header1Date = document.querySelector(".header1 h1");
+let header1Time = document.querySelector(".header1 h2");
+let header2Time = document.querySelector(".header2 h2");
+let header2Weather = document.querySelector(".header2 h4");
+let heat = document.querySelector(".header2 .heat");
+let humidity = document.querySelector(".header2 .humi");
+let wind = document.querySelector(".header2 .wind");
+
 
 async function weatherAPICall(){
   var response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`)
- data = await response.json() 
+ data = await response.json()  
+
+ console.log(data.current)
+ header2Time.innerHTML = `${data.current.temp_c}°C` 
+ header2Weather.innerHTML = `${data.current.condition.text}`
+ heat.innerHTML = `HeatIndex: ${data.current.heatindex_c}%`
+ humidity.innerHTML = `Humidity: ${data.current.humidity}%`
+ wind.innerHTML = `Wind: ${data.current.wind_kph} km/h`
+//  perc.innerHTML = ${data}
+
+ 
 }
 
 weatherAPICall()
 
 function timeDate(){
-  const totaldaysOfWeek = ['Sunday',"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+  const totaldaysOfWeek = ['Sunday',"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] ;
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   let date = new Date()
+  let dayOfWeek = totaldaysOfWeek[date.getDay()]
   let hours = date.getHours()
   let minute = date.getMinutes()
-  let dayOfWeek = totaldaysOfWeek[date.getDay()]
+  let dates = date.getDate()
+  let month = monthNames[date.getMonth()]
+  let year = date.getFullYear()
+  
+  header1Date.innerHTML = `${dates}${month}${year}`
   if(hours>12){
-  header1Date.innerHTML = `${dayOfWeek}, ${hours - 12}:${minute} PM`
-  }
-  else{
-  header1Date.innerHTML = `${dayOfWeek}, ${hours}:${minute} AM`
-
+  header1Date.innerHTML = `${dayOfWeek}, ${String[hours - 12].padStart(2,'0')}:${String[minute].padStart(2, "0")} PM`
+}
+else{
+    header1Date.innerHTML = `${dayOfWeek}, ${String[hours - 12].padStart(2,'0')}:${String[minute].padStart(2, "0")} AM` 
   }
   
 }
-timeDate()
+
+setInterval(()=>{
+  timeDate()
+
+},1000)
