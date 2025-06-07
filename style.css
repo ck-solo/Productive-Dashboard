@@ -31,13 +31,74 @@ section.allElems{
     padding: 10px 30px;
     height: 100%;
     width: 100%;
-    background-color: var(--tri1);
-    padding-top: 40px ;
+    background-color: var(--tri1);  
+    overflow: auto;
+    position: absolute;
+}
+
+/* header part */
+.allElems header{
+    height: 280px;
+    width: 100%; 
+    background-image: url('https://images.unsplash.com/photo-1722400581060-c1115c1a2f97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEzfHxob3QlMjBhaXIlMjBiYWxsb24lMjBjbG91ZHklMjBza3l8ZW58MHwwfDB8fHww');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    color: #eef3d0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+header .header1{
+    font-size: 40px;
+    font-weight: 500;
+}
+
+header .header1 h2{
+    font-size: 40px; 
+    font-weight: 500;
+}
+.header1 h1{
+    font-weight: 500;
+    font-size: 70px;
+}
+.header1 h2{
+    font-weight: 500;
+    font-size: 70px;
+}
+header .header2{
+    font-size: 20px; 
+    
+}
+.header2 h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    
+}
+.header2 h3{ 
+    font-size: 30px;
+    font-weight: 500;
+
+    
+}
+.header2 h4{
+    font-size: 30px;
+    font-weight: 500;
+ 
+}
+
+
+
+.allFeatures{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 10px;
-    position: absolute;
 
 }
 
@@ -46,7 +107,7 @@ section.allElems{
     background-color: #7F8CAA; 
     font-size: 20px;
     border-radius: 10px;
-    height: 300px;
+    height: 250px;
     width: 250px;
     position: relative;
     overflow: hidden;
@@ -119,7 +180,7 @@ section.allElems{
     width: 35%;
     height: 100%; 
     border-radius: 20px;
-    background-color: var(--tri2);
+    background-color: rgb(247, 241, 232);
 }
 .todo-list-fullpage .todo-container .addTask form{
     display: flex;
@@ -178,8 +239,8 @@ section.allElems{
 .todo-list-fullpage .todo-container .allTask{
     width: 60%;
     height: 100%; 
-    background-color: var(--tri2);
     overflow: hidden;
+    background-color: rgb(230, 221, 204);
     border-radius: 20px;
     padding: 20px 30px;
     overflow: auto;

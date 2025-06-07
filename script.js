@@ -1,3 +1,6 @@
+const apiKey = "b08fb931e24a409e98f123136250606"
+
+
 function openFeatures() {
   var allElems = document.querySelectorAll(".elem");
   var fullElemPage = document.querySelectorAll(".fullElem");
@@ -146,6 +149,9 @@ let isworkSession = true;
 let timeinterval = null;
 let totalSeconds = 25 * 60;
 
+function pomodoro(){
+
+
 function updateTime() {
   let minute = Math.floor(totalSeconds / 60);
   let second = totalSeconds % 60;
@@ -205,3 +211,38 @@ function resetTimer() {
 }
 
 resetbtn.addEventListener("click", resetTimer);
+
+}
+
+pomodoro()
+
+
+// ++++++++++++++++Landing Page++++++++++++++++++++++=
+
+var city = "Delhi"
+let data = null
+let header1Date = document.querySelector(".header1 h1");
+
+async function weatherAPICall(){
+  var response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`)
+ data = await response.json() 
+}
+
+weatherAPICall()
+
+function timeDate(){
+  const totaldaysOfWeek = ['Sunday',"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+  let date = new Date()
+  let hours = date.getHours()
+  let minute = date.getMinutes()
+  let dayOfWeek = totaldaysOfWeek[date.getDay()]
+  if(hours>12){
+  header1Date.innerHTML = `${dayOfWeek}, ${hours - 12}:${minute} PM`
+  }
+  else{
+  header1Date.innerHTML = `${dayOfWeek}, ${hours}:${minute} AM`
+
+  }
+  
+}
+timeDate()
