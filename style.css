@@ -25,7 +25,8 @@ html,body{
 
 #main{
     width: 100%;
-    height: 200%;
+    height: 100%;
+    padding-top: 100px;
     background-color: var(--tri1);
     
 }
@@ -37,8 +38,9 @@ nav{
     height: 70px;
     width: 100%;
     padding: 20px 40px; 
-    margin-bottom: 10px;
-     background-color: var(--tri1);
+    margin-bottom: 10px; 
+     position: fixed;
+     top: 0; 
         
 }  
 .nav-in{ 
@@ -46,8 +48,8 @@ nav{
     align-items: center;
     justify-content: space-between ;
     background-color: var(--lightblue) ;
-    border-radius: 10px;
-    padding: 10px 20px ; 
+    border-radius: 10px; 
+    padding: 5px 10px;
 
 }
 
@@ -57,17 +59,20 @@ nav{
 }
 
 .theme{
-    background-color: var(--lightblue);
-    padding: 20px 10px; 
     border-radius: 50%;
     transition: all ease 0.2s;
+    cursor: pointer;
 }
-.theme i{
+.theme h4{
     color: var(--black); 
+    background-color: var(--tri2);
     font-weight: 700; 
+    font-size: 14px;  
+    padding: 10px 10px; 
+    border-radius: 20px;
 }
 .theme:active{
-    
+    scale: 0.9;
 }
 section.allElems{
     padding: 20px; 

@@ -217,9 +217,10 @@ resetbtn.addEventListener("click", resetTimer);
 pomodoro()
 
 
-// ++++++++++++++++Landing Page++++++++++++++++++++++=
+// ++++++++++++++++Weather function++++++++++++++++++++++=
 
-var city = "Delhi"
+function weatherfunction(){
+  var city = "Delhi"
 let data = null
 let header1Date = document.querySelector(".header1 h1");
 let header1Time = document.querySelector(".header1 h2");
@@ -299,3 +300,8 @@ function setBackgroundBasedOnTime() {
 }
 
 setBackgroundBasedOnTime();
+
+}
+
+weatherfunction()
+
