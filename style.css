@@ -1,5 +1,5 @@
 :root{
-    --pri: #e61c1c;
+    --pri: #757171;
     --sec:#2A4759;
     --tri1:#90D1CA;
     --tri2:#D2D0A0;
@@ -8,11 +8,14 @@
     --blue: rgb(11, 134, 175);
     --black:rgb(43, 40, 40);
     --lightblue:#43728f; 
+    --red: #e61c1c;
+
 }
 
 *{
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box; 
     font-family: Arial, Helvetica, sans-serif; 
 }
@@ -23,11 +26,12 @@ html,body{
 }
 
 
-#main{
+#main{ 
     width: 100%;
     height: 100%;
     padding-top: 100px;
-    background-color: var(--tri1);
+    background-color: var(--tri1); 
+    overflow: auto;
     
 }
  
@@ -41,12 +45,19 @@ nav{
     margin-bottom: 10px; 
      position: fixed;
      top: 0; 
+     z-index: 99;
         
 }  
 .nav-in{ 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
-    align-items: center;
-    justify-content: space-between ;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between ;
     background-color: var(--lightblue) ;
     border-radius: 10px; 
     padding: 5px 10px;
@@ -60,6 +71,8 @@ nav{
 
 .theme{
     border-radius: 50%;
+    -webkit-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
     transition: all ease 0.2s;
     cursor: pointer;
 }
@@ -67,7 +80,7 @@ nav{
     color: var(--black); 
     background-color: var(--tri2);
     font-weight: 700; 
-    font-size: 14px;  
+    font-size: 18px;  
     padding: 10px 10px; 
     border-radius: 20px;
 }
@@ -92,9 +105,15 @@ section.allElems{
     margin-bottom: 20px;
     border-radius: 20px;
     color: #eef3d0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 40px;
 }
 
@@ -143,11 +162,19 @@ header .header2{
 
 
 .allFeatures{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 12px;
-
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; 
+    gap: 20px;
+    
 }
 
 
@@ -159,6 +186,8 @@ header .header2{
     width: 250px;
     position: relative;
     overflow: hidden;
+    -webkit-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
     transition: all ease 0.2s;
     cursor: pointer;
     color: #fff;
@@ -168,7 +197,8 @@ header .header2{
 .elem img{ 
     width: 100%;
     height: 100%; 
-    object-fit: cover;
+    -o-object-fit: cover; 
+       object-fit: cover;
 }
 
 .elem h2{
@@ -191,6 +221,8 @@ header .header2{
     display: none;
     position: absolute;
     color: #fff;
+    top: 0;
+    z-index: 999;
 
     
 }
@@ -201,8 +233,8 @@ header .header2{
     border: none;
     font-size:20px;
     font-weight: 400;
-    padding: 10px 15px;
-    background-color: var(--pri);
+    padding: 10px 20px;
+    background-color: var(--red);
     border-radius: 20px;
     color: #fff;
 }
@@ -218,9 +250,15 @@ header .header2{
     height: 80%;
     width: 100%; 
     margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     border-radius: 20px;
 }
 
@@ -231,8 +269,13 @@ header .header2{
     background-color: rgb(247, 241, 232);
 }
 .todo-list-fullpage .todo-container .addTask form{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column; 
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; 
     padding: 20px; 
     gap: 15px;
 }
@@ -254,9 +297,15 @@ header .header2{
 }
 
 .mark-imp{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;  
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;  
     color: var(--pri);
     width: 100%; 
 }
@@ -277,6 +326,8 @@ header .header2{
     color: var(--pri);
     background-color: var(--tri1);
     font-weight: 600; 
+    -webkit-transition: all ease 0.3s; 
+    -o-transition: all ease 0.3s; 
     transition: all ease 0.3s;  
 }
 
@@ -294,9 +345,15 @@ header .header2{
     overflow: auto;
 }
 .todo-list-fullpage .todo-container .allTask .task{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     background-color: var(--sec);
     width: 100%; 
     border-radius: 10px;
@@ -305,15 +362,19 @@ header .header2{
 }
 .todo-list-fullpage .todo-container .allTask .task h5{
     font-size: 40px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: flex-start;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
         color: var(--tri2); 
         gap: 10px;
 }
 .task h5 span{
-    background-color: var(--pri); 
+    background-color: var(--red); 
     border-radius: 50px;
-    color: var(--sec);
+    color: var(--black);
     font-size: 12px;
     padding: 3px 6px;
 }
@@ -333,6 +394,8 @@ header .header2{
     background-color: var(--tri2);
     color: #fff;
     background-color: var(--green);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -350,16 +413,27 @@ header .header2{
     margin-top: 30px;
     border-radius: 10px;
     padding: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     overflow: auto;
 }
 
 .daily-planner-fullpage .day-planner .day-planner-time{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
     width: 49%;
     margin-bottom: 15px;
@@ -385,24 +459,26 @@ header .header2{
 }
 
 /* ++++++++++++MotivationPage++++++++++++++ */
-
-.motivational-fullpage { 
-    position: relative; 
-
-}
+ 
 .motivation-fullPage-container{
     height: 100%;
     width: 100%; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
 }
 
 .motivational-fullpage .motivation-container{
     position: relative; 
     height: 400px;
-    width: 80%;
+    width: 80%; 
     border-radius: 20px;  
 }
  
@@ -416,7 +492,8 @@ header .header2{
     position: absolute;
     border-radius: 20px;
     scale: 1.15;
-    filter: blur(60px); 
+    -webkit-filter: blur(70px);
+            filter: blur(70px); 
     z-index: 8;
 }
 
@@ -428,6 +505,7 @@ header .header2{
     background-color: var(--tri3);
     padding: 12px;
     border: 3px solid var(--sec);
+    margin-top: 20px;
 }
 
 .motivational-fullpage .motivation-container .motivation-wrapper img{
@@ -442,22 +520,39 @@ header .header2{
     padding: 20px;
     background-color: var(--sec);
     border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     
 }
 
 .motivation-1 h2{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 
 }
 
 .motivation-2{  
+    margin-top: 10px;
     padding: 20px;
 }
 
@@ -468,9 +563,15 @@ header .header2{
     margin-top: 10px;
 }
 .motivation-3{ 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     border-radius: 10px;
 }
 
@@ -481,6 +582,8 @@ header .header2{
     border-radius: 20px;
     font-weight: 600;  
     background-color: var(--sec);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -490,7 +593,9 @@ header .header2{
     position: absolute;
     top: 25%;
     left: 50%;
-    transform: translate(-50% ,0);
+    -webkit-transform: translate(-50% ,0);
+        -ms-transform: translate(-50% ,0);
+            transform: translate(-50% ,0);
     background-color:var(--green);
     padding: 10px 30px; 
     font-size: 25px;
@@ -504,7 +609,9 @@ header .header2{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50% , -50%);
+        -ms-transform: translate(-50% , -50%);
+            transform: translate(-50% , -50%);
     text-align: center;
 }
 
@@ -520,9 +627,11 @@ header .header2{
     margin: 10px;
     border: none;
     font-size: 20px;
-    box-shadow: 5px 5px 0px rgb(44, 43, 43);
+    -webkit-box-shadow: 5px 5px 0px rgb(44, 43, 43);
+            box-shadow: 5px 5px 0px rgb(44, 43, 43);
 }
 
 .pomo-timer button:active{
-    box-shadow: 0 0 0 black;
+    -webkit-box-shadow: 0 0 0 black;
+            box-shadow: 0 0 0 black;
 }

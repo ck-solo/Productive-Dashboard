@@ -151,7 +151,6 @@ let totalSeconds = 25 * 60;
 
 function pomodoro(){
 
-
 function updateTime() {
   let minute = Math.floor(totalSeconds / 60);
   let second = totalSeconds % 60;
@@ -305,3 +304,52 @@ setBackgroundBasedOnTime();
 
 weatherfunction()
 
+
+
+function changeTheme(){
+
+  let theme = document.querySelector('.theme')
+  let rootElement = document.documentElement 
+  
+  let flag = 0
+theme.addEventListener('click',function(){
+  if(flag == 0){
+    rootElement.style.setProperty('--pri',"#52357B")
+    rootElement.style.setProperty('--sec',"#5459AC")
+    rootElement.style.setProperty('--tri1',"#648DB3")
+    rootElement.style.setProperty('--tri2',"#B2D8CE")
+    rootElement.style.setProperty('--tri3',"#52357B")
+    flag = 1
+  } else if(flag == 1){
+    
+    rootElement.style.setProperty('--pri',"#ADB2D4")
+    rootElement.style.setProperty('--sec',"#C7D9DD")
+    rootElement.style.setProperty('--tri1',"#D5E5D5")
+    rootElement.style.setProperty('--tri2',"#EEF1DA")
+    rootElement.style.setProperty('--tri3',"#5C7285")
+    flag = 2
+    
+  } else if (flag == 2){
+
+    rootElement.style.setProperty('--pri',"#497D74")
+    rootElement.style.setProperty('--sec',"#27445D")
+    rootElement.style.setProperty('--tri1',"#71BBB2")
+    rootElement.style.setProperty('--tri2',"#EFE9D5")
+    rootElement.style.setProperty('--tri3',"#DD88CF")
+    
+    flag = 0
+    
+  } else {
+      rootElement.style.setProperty('--pri',"#e61c1c")
+      rootElement.style.setProperty('--sec',"#2A4759")
+      rootElement.style.setProperty('--tri1',"#90D1CA")
+      rootElement.style.setProperty('--tri2',"#D2D0A0")
+      rootElement.style.setProperty('--tri3',"#7F8CAA")
+      
+    } 
+    
+  })
+  
+}
+
+changeTheme()
