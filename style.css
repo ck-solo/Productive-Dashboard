@@ -6,6 +6,8 @@
     --tri3:#7F8CAA;
     --green:rgb(0, 128, 85);
     --blue: rgb(11, 134, 175);
+    --black:rgb(43, 40, 40);
+    --lightblue:#43728f; 
 }
 
 *{
@@ -23,47 +25,85 @@ html,body{
 
 #main{
     width: 100%;
-    height: 100%;
+    height: 200%;
+    background-color: var(--tri1);
     
 }
  
+
+/* Nav */
+
+nav{
+    height: 70px;
+    width: 100%;
+    padding: 20px 40px; 
+    margin-bottom: 10px;
+     background-color: var(--tri1);
+        
+}  
+.nav-in{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    background-color: var(--lightblue) ;
+    border-radius: 10px;
+    padding: 10px 20px ; 
+
+}
+
+.nav-in h2{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.theme{
+    background-color: var(--lightblue);
+    padding: 20px 10px; 
+    border-radius: 50%;
+    transition: all ease 0.2s;
+}
+.theme i{
+    color: var(--black); 
+    font-weight: 700; 
+}
+.theme:active{
+    
+}
 section.allElems{
-    padding: 10px 30px;
+    padding: 20px; 
     height: 100%;
     width: 100%;
     background-color: var(--tri1);  
-    overflow: auto;
     position: absolute;
 }
 
 /* header part */
-.allElems header{
-    height: 280px;
+.allElems header{ 
     width: 100%; 
-    background-image: url('https://images.unsplash.com/photo-1612863229236-60722f5ef8c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fGNsb3VkeSUyMHNreXxlbnwwfDB8MHx8fDA%3D');
+    background-image: url('https://images.unsplash.com/photo-1610798018989-001c5150766a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fG5pZ2h0d2VhdGhlcnxlbnwwfHwwfHx8MA%3D%3D');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center ;
-    margin-bottom: 30px;
+    background-position: center;
+    margin-bottom: 20px;
     border-radius: 20px;
     color: #eef3d0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px;
+    padding: 40px;
 }
 
 header .header1{
     font-size: 40px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 header .header1 h2{
     font-size: 40px; 
-    font-weight: 500;
+    font-weight: 800;
 }
 .header1 h1{
-    font-weight: 500;
+    font-weight: 700;
     font-size: 70px;
 }
 .header1 h2{
@@ -101,13 +141,13 @@ header .header2{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
 
 }
 
 
 .elem{
-    background-color: #7F8CAA; 
+    background-color: var(--tri3); 
     font-size: 20px;
     border-radius: 10px;
     height: 250px;
@@ -212,7 +252,7 @@ header .header2{
     display: flex;
     align-items: center;
     justify-content: flex-start;  
-    color: #ff0909;
+    color: var(--pri);
     width: 100%; 
 }
 .mark-imp input{ 
@@ -266,7 +306,7 @@ header .header2{
         gap: 10px;
 }
 .task h5 span{
-    background-color: red; 
+    background-color: var(--pri); 
     border-radius: 50px;
     color: var(--sec);
     font-size: 12px;
@@ -287,7 +327,7 @@ header .header2{
     border-radius: 10px;
     background-color: var(--tri2);
     color: #fff;
-    background-color: green;
+    background-color: var(--green);
     width: fit-content;
 }
 
@@ -324,7 +364,7 @@ header .header2{
     top: 10%;
     left: 2%;
     font-size: 20px; 
-    color: rgb(43, 40, 40);
+    color: var(--black);
 }
 
 .day-planner .day-planner-time input{
@@ -446,7 +486,7 @@ header .header2{
     top: 25%;
     left: 50%;
     transform: translate(-50% ,0);
-    background-color:rgb(0, 128, 85);
+    background-color:var(--green);
     padding: 10px 30px; 
     font-size: 25px;
     border-radius: 5px;
@@ -468,7 +508,7 @@ header .header2{
 }
 
 .pomo-timer button{
-    background-color: #43728f;
+    background-color: var(--lightblue) ; 
     padding: 10px 20px; 
     border-radius: 5px;
     color: aliceblue;

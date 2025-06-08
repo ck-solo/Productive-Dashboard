@@ -258,12 +258,13 @@ function timeDate(){
   let month = monthNames[date.getMonth()]
   let year = date.getFullYear()
   
-  header1Date.innerHTML = `${dates}${month}${year}`
+  header1Time.innerHTML = `${dates} ${month} ${year}`
+
   if(hours>12){
-  header1Date.innerHTML = `${dayOfWeek}, ${String[hours - 12].padStart(2,'0')}:${String[minute].padStart(2, "0")} PM`
+  header1Date.innerHTML = `${dayOfWeek}, ${String(hours - 12).padStart(2,'0')}:${String(minute).padStart(2, "0")} PM`
 }
 else{
-    header1Date.innerHTML = `${dayOfWeek}, ${String[hours - 12].padStart(2,'0')}:${String[minute].padStart(2, "0")} AM` 
+    header1Date.innerHTML = `${dayOfWeek}, ${String(hours).padStart(2,'0')}:${String(minute).padStart(2, "0")} AM` 
   }
   
 }
@@ -272,3 +273,29 @@ setInterval(()=>{
   timeDate()
 
 },1000)
+
+ 
+
+function setBackgroundBasedOnTime() {
+  const landingPage = document.querySelector(".allElems header");
+  const hour = new Date().getHours();
+  
+  const backgrounds = {
+    morning: "url('https://images.unsplash.com/photo-1661591242935-004bc7f71ada?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1vcm5pbmclMjBzdW4lMjBza3l8ZW58MHx8MHx8fDA%3D')",
+    afternoon: "url('https://images.unsplash.com/photo-1715543903784-571b3feca30c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFmdGVybm9vbiUyMHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D')",
+    evening: "url('https://plus.unsplash.com/premium_photo-1727792438882-d88192cb9a1c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGV2ZW5pbmclMjAlMjB3ZWF0aGVyfGVufDB8fDB8fHww')",
+    night: "url('https://images.unsplash.com/photo-1610798018989-001c5150766a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fG5pZ2h0d2VhdGhlcnxlbnwwfHwwfHx8MA%3D%3D')",
+  };
+
+  let bgImage = backgrounds.night;
+
+  if (hour >= 5 && hour < 12) bgImage = backgrounds.morning;
+  else if (hour >= 12 && hour < 17) bgImage = backgrounds.afternoon;
+  else if (hour >= 17 && hour < 20) bgImage = backgrounds.evening;
+
+  landingPage.style.backgroundImage = bgImage;
+  landingPage.style.backgroundSize = "cover";
+  landingPage.style.backgroundPosition = "center";
+}
+
+setBackgroundBasedOnTime();
